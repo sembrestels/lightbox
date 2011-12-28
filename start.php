@@ -82,7 +82,7 @@ function lightbox_page_handler($page) {
 		$page[0] = 'all';
 	}
 
-	$pages_dir = elgg_get_plugins_path() . 'lightbox/pages/photos';
+	$pages_dir = elgg_get_plugins_path() . 'lightbox/pages/lightbox';
 
 	$page_type = $page[0];
 	switch ($page_type) {

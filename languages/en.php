@@ -19,13 +19,14 @@ $english = array(
 	'lightbox:group' => "Group albums",
 	'lightbox:num_albums' => "Number of albums to display",
 	'lightbox:via' => 'via images',
-	'lightbox:add' => "Create new album",
+	'photos:add' => "Create new album",
 
 	'lightbox:title' => "Title",
 	'lightbox:description' => "Description",
 	'lightbox:tags' => "Tags",
 	
 	'lightbox:image:upload' => 'Upload and image',
+	'lightbox:image:upload:another' => 'Upload another image',
 	'lightbox:image:replace' => 'Replace image content (leave blank to not change image)',
 	'lightbox:image:title' => 'Title',
 	'lightbox:image:description' => 'Description',
