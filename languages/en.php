@@ -70,7 +70,6 @@ $english = array(
 		'lightbox:save:failed' => "Sorry; we could not save your album.",
 		'lightbox:delete:failed' => "Your album could not be deleted at this time.",
 		'lightbox:noaccess' => "You do not have permissions to change this album",
-		'lightbox:cannotload' => "There was an error uploading the image",
 		'lightbox:nofile' => "You must select an image",
 );
 

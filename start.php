@@ -31,13 +31,13 @@ function lightbox_init() {
 	elgg_register_plugin_hook_handler('entity:icon:url', 'object', 'lightbox_icon_url_override');
 
 	// Register some actions
-	$action_base = elgg_get_plugins_path() . 'lightbox/actions/photos';
-	elgg_register_action("photos/edit", "$action_base/edit.php");
-	elgg_register_action("photos/delete", "$action_base/delete.php");
+	$action_base = elgg_get_plugins_path() . 'lightbox/actions/lightbox';
+	elgg_register_action("lightbox/edit", "$action_base/edit.php");
+	elgg_register_action("lightbox/delete", "$action_base/delete.php");
 	
-	$action_base .= '/albums';
-	elgg_register_action("photos/albums/edit", "$action_base/edit.php");
-	elgg_register_action("photos/albums/delete", "$action_base/delete.php");
+	$action_base .= '/images';
+	elgg_register_action("lightbox/albums/edit", "$action_base/edit.php");
+	elgg_register_action("lightbox/albums/delete", "$action_base/delete.php");
 
 	// Add some widgets
 	elgg_register_widget_type('lightbox', elgg_echo('lightbox:widget'), elgg_echo('groups:widgets:description'));
