@@ -92,6 +92,7 @@ function lightbox_page_handler($page) {
 		case 'friends':
 			include "$pages_dir/friends.php";
 			break;
+		case 'album':
 		case 'view':
 			set_input('guid', $page[1]);
 			include "$pages_dir/view.php";
