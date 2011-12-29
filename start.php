@@ -15,8 +15,8 @@ function lightbox_init() {
 	elgg_register_library('elgg:lightbox', elgg_get_plugins_path() . 'lightbox/lib/lightbox.php');
 
 	// register group entities for search
-	elgg_register_entity_type('object', 'image');
-	elgg_register_entity_type('object', 'album');
+	elgg_register_entity_type('object', 'image', 'LightboxPluginImage');
+	elgg_register_entity_type('object', 'album', 'LightboxPluginAlbum');
 
 	// Set up the menu
 	$item = new ElggMenuItem('lightbox', elgg_echo('lightbox'), 'photos/all');

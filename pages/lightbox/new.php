@@ -24,7 +24,7 @@ if (elgg_instanceof($owner, 'user')) {
 elgg_push_breadcrumb($title);
 
 // create form
-$form_vars = array();
+$form_vars = array('enctype' => 'multipart/form-data');
 $body_vars = array();
 $content = elgg_view_form('lightbox/edit', $form_vars, $body_vars);
 

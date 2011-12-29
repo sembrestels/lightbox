@@ -23,15 +23,15 @@ $guid = elgg_extract('guid', $vars, null);
 
 <div>
 	<label><?php echo elgg_echo('lightbox:image:upload'); ?></label><br />
-	<?php echo elgg_view('input/file', array('name' => 'upload')); ?>
+	<?php echo elgg_view('input/file', array('name' => 'upload0')); ?>
 </div>
 <div>
 	<label><?php echo elgg_echo('lightbox:image:upload:another'); ?></label><br />
-	<?php echo elgg_view('input/file', array('name' => 'upload')); ?>
+	<?php echo elgg_view('input/file', array('name' => 'upload1')); ?>
 </div>
 <div>
 	<label><?php echo elgg_echo('lightbox:image:upload:another'); ?></label><br />
-	<?php echo elgg_view('input/file', array('name' => 'upload')); ?>
+	<?php echo elgg_view('input/file', array('name' => 'upload2')); ?>
 </div>
 
 <?php if($guid): ?>
