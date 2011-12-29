@@ -37,7 +37,7 @@ function lightbox_get_image_inputs() {
 			continue;
 		}
 		
-		$file = new ElggFile();
+		$file = new LightboxPluginImage();
 		
 		$prefix = "image/";
 		$filestorename = elgg_strtolower(time().$sent_file['name']);
@@ -53,10 +53,8 @@ function lightbox_get_image_inputs() {
 		$file->close();
 		move_uploaded_file($sent_file['tmp_name'], $file->getFilenameOnFilestore());
 
-		$guid = $file->save();
-
 		// We need to create thumbnails (this should be moved into a function)
-		if ($guid) {
+		if ($file->save()) {
 			$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(),60,60, true);
 			if ($thumbnail) {
 				$thumb = new ElggFile();
@@ -91,7 +89,7 @@ function lightbox_get_image_inputs() {
 				unset($thumblarge);
 			}
 			
-			$files[$guid] = $file;
+			$files[$file->guid] = $file;
 		}
 	}
 	

@@ -66,9 +66,19 @@ if ($full && !elgg_in_context('gallery')) {
 	);
 	$params = $params + $vars;
 	$summary = elgg_view('object/elements/summary', $params);
+	
+	$gallery = elgg_list_entities_from_relationship(array(
+		'type' => 'object',
+		'subtype' => 'image',
+		'relationship' => 'in_album',
+		'relationship_guid' => $entity->guid,
+		'inverse_relationship' => false,
+		'full_view' => false,
+		
+	));
 
 	$text = elgg_view('output/longtext', array('value' => $entity->description));
-	$body = "$text $extra";
+	$body = "$text $gallery";
 
 	echo elgg_view('object/elements/full', array(
 		'entity' => $entity,

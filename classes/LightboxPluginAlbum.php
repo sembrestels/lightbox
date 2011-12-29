@@ -14,20 +14,15 @@ class LightboxPluginAlbum extends ElggObject {
 		parent::__construct($guid);
 	}
 	
-	public function attachImages($images) {return true;
+	public function attachImages($images) {
 		foreach($images as $image) {
 			if($image instanceof LightboxPluginImage) {
 				$this->addRelationship($image->guid, 'in_album');
 			} else {
-			//	return false;
+				return false;
 			}
 		}
 		return true;
-	}
-	
-	public function save() {
-		echo "hola";
-		return parent::save();
 	}
 
 	public function delete() {
