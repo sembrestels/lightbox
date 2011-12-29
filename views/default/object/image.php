@@ -1,6 +1,6 @@
 <?php
 /**
- * Album renderer.
+ * Image renderer.
  *
  * @package ElggLightbox
  */
@@ -66,20 +66,9 @@ if ($full && !elgg_in_context('gallery')) {
 	);
 	$params = $params + $vars;
 	$summary = elgg_view('object/elements/summary', $params);
-	
-	$gallery = elgg_list_entities_from_relationship(array(
-		'type' => 'object',
-		'subtype' => 'image',
-		'relationship' => 'in_album',
-		'relationship_guid' => $entity->guid,
-		'inverse_relationship' => false,
-		'list_type' => 'gallery',
-		'full_view' => false,
-		
-	));
 
-	$text = elgg_view('output/longtext', array('value' => $entity->description));
-	$body = "$text $gallery";
+	$body = elgg_view('lightbox/image' , $vars)
+	. elgg_view('output/longtext', array('value' => $entity->description));
 
 	echo elgg_view('object/elements/full', array(
 		'entity' => $entity,
@@ -93,7 +82,6 @@ if ($full && !elgg_in_context('gallery')) {
 	echo '<div class="album-gallery-item">';
 	echo "<h3>" . $entity->title . "</h3>";
 	echo elgg_view_entity_icon($entity, 'medium');
-	echo "<p class='subtitle'>$owner_link $date</p>";
 	echo '</div>';
 } else {
 	// brief view

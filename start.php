@@ -142,16 +142,18 @@ function lightbox_url($entity) {
  * @return string Relative URL
  */
 function lightbox_icon_url_override($hook, $type, $returnvalue, $params) {
-	// TODO
+	
 	$entity = $params['entity'];
 	$size = $params['size'];
 
-	if (isset($entity->thumbnail)) {
-		// return thumbnail
-		return "";
-	}
+	if(in_array($entity->getSubtype(), array('image', 'album'))) {
+		if (isset($entity->thumbnail) || isset($entity->cover)) {
+			// return thumbnail
+			return "mod/lightbox/thumbnail.php?guid=$entity->guid&size=$size";
+		}
 
-	return "mod/lightbox/graphics/default{$size}.gif";
+		return "mod/lightbox/graphics/default{$size}.jpg";
+	}
 }
 
 /**

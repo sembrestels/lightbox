@@ -18,6 +18,11 @@ if (elgg_instanceof($owner, 'group')) {
 	elgg_push_breadcrumb($crumbs_title, "photos/owner/$owner->username");
 }
 
+if($entity->countEntitiesFromRelationship('in_album', true) > 0) {
+	$album = $entity->getEntitiesFromRelationship('in_album', true, 1);
+	elgg_push_breadcrumb($album[0]->title, $album[0]->getURL());
+}
+
 $title = $entity->title;
 
 elgg_push_breadcrumb($title);
