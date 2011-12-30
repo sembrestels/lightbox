@@ -55,6 +55,13 @@ function lightbox_init() {
 	//extend some views
 	elgg_extend_view('css/elgg', 'lightbox/css');
 	elgg_extend_view('js/elgg', 'lightbox/js');
+	
+	// Register vendors libraries
+	elgg_register_css('jquery.lightbox', 'mod/lightbox/vendors/lightbox/jquery.lightbox-0.5.css');
+	elgg_register_js('jquery.lightbox', 'mod/lightbox/vendors/lightbox/jquery.lightbox-0.5.min.js');
+	
+	$album_js = elgg_get_simplecache_url('js', 'lightbox/album');
+	elgg_register_js('lightbox.album', $album_js);
 
 }
 

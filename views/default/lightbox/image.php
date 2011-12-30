@@ -5,7 +5,7 @@
 
 $image_url = elgg_get_site_url() . "mod/lightbox/thumbnail.php?guid={$vars['entity']->getGUID()}&size=large";
 $image_url = elgg_format_url($image_url);
-$download_url = elgg_get_site_url() . "mod/lightbox/download.php?guid={$vars['entity']->getGUID()}";
+$download_url = elgg_get_site_url() . "mod/lightbox/thumbnail.php?guid={$vars['entity']->getGUID()}&size=full";
 
 if ($vars['full_view'] && $smallthumb = $vars['entity']->smallthumb) {
 	echo <<<HTML

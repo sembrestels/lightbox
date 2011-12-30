@@ -5,6 +5,10 @@
  * @package ElggLightbox
  */
 
+elgg_load_js('jquery.lightbox');
+elgg_load_css('jquery.lightbox');
+elgg_load_js('lightbox.album');
+
 $full = elgg_extract('full_view', $vars, FALSE);
 $entity = elgg_extract('entity', $vars, FALSE);
 
@@ -74,6 +78,7 @@ if ($full && !elgg_in_context('gallery')) {
 		'relationship_guid' => $entity->guid,
 		'inverse_relationship' => false,
 		'list_type' => 'gallery',
+		'item_class' => 'elgg-photo lightbox-photo',
 		'full_view' => false,
 		
 	));
